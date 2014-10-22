@@ -15,6 +15,7 @@ function loadSidebar (place) {
 	});
 
 	var scoreHTML = '';
+	var bestWidths = [];
 	for (var i = 0; i < bestTeams.length; i++) {
 		var team = bestTeams[i];
 		var sport = getSportFromTeam(team.name);
@@ -22,8 +23,9 @@ function loadSidebar (place) {
 		var bestTeamIndex = sportData.map(function (t){ return t.team; })
 				.indexOf(team.name);
 		var bestWidth = 100 - (100 * bestTeamIndex / sportData.length);
+		bestWidths[i] = bestWidth;
 		scoreHTML += '<li class="scoreBox">' +
-					'<span class="scoreValue" style="width:'+bestWidth+'%">' +
+					'<span class="scoreValue" style="width:1%">' +
 					'</span>' +
 				'</li>';
 
@@ -33,6 +35,13 @@ function loadSidebar (place) {
 	$('#city-name').text(place);
 	$('#scoreList').html(scoreHTML);
 	$('#infobox').hide();
+
+	// Animate the widths.
+	setTimeout(function () {
+		for (var i = 0; i < bestWidths.length; i++) {
+			$('.scoreValue')[i].style.width = bestWidths[i]+'%';
+		}
+	}, 1);
 }
 
 function loadInfobox (team) {
