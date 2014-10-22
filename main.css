@@ -52,7 +52,7 @@
 
 #sideContainer{
 	position: absolute;
-	top: 30%;
+	top: 3%;
 	right: 30px;
 	width: 300px;
 	padding: 10px;
@@ -84,7 +84,7 @@
 	background-color: lightgray;
 	position: fixed;
 	right: 380px;
-	top: 30%;
+	top: 3%;
 	padding: 0px 30px;
 	border-radius: 8px;
 	opacity: 0.92;
@@ -102,6 +102,15 @@
 
 #city-name{
 	margin-top: 0px;
+}
+
+.sidenote{
+	font-size: 12px;
+	width: 75%;
+	position: relative;
+	color: dimgray;
+	display: inline-block;
+	float: right;
 }
 
 
