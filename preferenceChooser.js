@@ -27,7 +27,7 @@ function calculateScores(data) {
 	//var allSports = nfl.concat(mlb,nba,nhl)
 	var scores = {}
 	//add in football score
-	var multiplier = 6 - data['football']
+	var multiplier = 3 - data['football']
 	nfl.map(function(curTeam){
 		if (curTeam['place'] in scores) {
 			scores[curTeam['place']] += curTeam['overall']*multiplier
@@ -37,7 +37,7 @@ function calculateScores(data) {
 		}
 	});
 
-	var multiplier = 6 - data['baseball']
+	var multiplier = 3 - data['baseball']
 	mlb.map(function(curTeam){
 		if (curTeam['place'] in scores) {
 			scores[curTeam['place']] += curTeam['overall']*multiplier
@@ -47,7 +47,7 @@ function calculateScores(data) {
 		}
 	});
 
-	var multiplier = 6 - data['basketball']
+	var multiplier = 3 - data['basketball']
 	nba.map(function(curTeam){
 		if (curTeam['place'] in scores) {
 			scores[curTeam['place']] += curTeam['overall']*multiplier
@@ -57,7 +57,7 @@ function calculateScores(data) {
 		}
 	});
 
-	var multiplier = 6 - data['hockey']
+	var multiplier = 3 - data['hockey']
 	nhl.map(function(curTeam){
 		if (curTeam['place'] in scores) {
 			scores[curTeam['place']] += curTeam['overall']*multiplier
