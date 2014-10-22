@@ -3,6 +3,10 @@
  * and the infobox.
  */
 
+var state = {
+	currentCity: null
+}
+
 function loadSidebar (place) {
 	state.currentCity = place;
 

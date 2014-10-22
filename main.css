@@ -99,3 +99,29 @@
 	margin-top: -120px;
 	transform: rotateZ(45deg);
 }
+
+#city-name{
+	margin-top: 0px;
+}
+
+
+#title{
+	padding-left: 50px;
+}
+
+#states path {
+  fill: #BAD1FF;
+  stroke: #fff;
+}
+
+circle {
+  fill: #1947A3;
+  fill-opacity: .8;
+  stroke: #fff;
+}
+
+h1{
+  color: #1947A3;
+  font-family: 'Arial';
+  margin-left: 220px;
+}
