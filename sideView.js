@@ -24,10 +24,18 @@ function loadSidebar (place) {
 				.indexOf(team.name);
 		var bestWidth = 100 - (100 * bestTeamIndex / sportData.length);
 		bestWidths[i] = bestWidth;
-		scoreHTML += '<li class="scoreBox">' +
-					'<span class="scoreValue" style="width:1%">' +
-					'</span>' +
-				'</li>';
+		scoreHTML += '<li class="team-entry">'
+		if (team.place == 'New York'){
+			scoreHTML += '<img class="team-icon" src="'+nyIcons[team.name]+'">';
+		} else {
+			scoreHTML += '<img class="team-icon" src="nyicons/Brooklyn_Nets.png">';
+		}
+		scoreHTML += '<div class="scoreBox">' +
+							'<span class="scoreValue" style="width:1%">' +
+							'</span>' +
+						'</div>' +
+					'</li>';
+					console.log(scoreHTML)
 
 		console.log(team, bestWidth)
 	}
@@ -78,9 +86,13 @@ function getSportFromTeam (team) {
 $('#scoreList').mousemove(function (e) {
 	$('#infobox').show();
 	var box = e.target;
-	if (box && (box.classList.contains('scoreBox') ||
-				box.classList.contains('scoreValue'))){
-		box = box.classList.contains('scoreValue') ? box.parentElement : box;
+	if (box && (box.classList.contains('teamEntry') ||
+				box.classList.contains('scoreValue') ||
+				box.classList.contains('scoreBox') ||
+				box.classList.contains('team-icon'))){
+		box = box.classList.contains('scoreValue') ? box.parentElement.parentElement : box;
+		box = box.classList.contains('scoreBox') ? box.parentElement : box;
+		box = box.classList.contains('team-icon') ? box.parentElement : box;
 		var boxIndex = $(box).index();
 		var bestTeams = teams.filter(function (team){
 			return team.place == state.currentCity;

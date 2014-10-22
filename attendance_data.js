@@ -230,3 +230,14 @@ var allData = {
 	nhl: nhl
 }
 
+var nyIcons = {
+	"NY Knicks": "nyicons/NY_Knicks.png",
+	"Nets": "nyicons/Brooklyn_Nets.png",
+	"NY Giants": "nyicons/New_York_Giants.png",
+	"NY Jets": "nyicons/New_York_Jets.png",
+	"NY Rangers": "nyicons/NewYorkRangers.png",
+	"NY Islanders": "nyicons/New_York_Islanders.png",
+	"NY Yankees": "nyicons/NY_Yankees.png",
+	"NY Mets": "nyicons/ny-mets.png"
+}
+
