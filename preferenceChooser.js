@@ -16,7 +16,12 @@ function submitRatings() {
 	console.log(scores)
 	var topCities = calculateRanking(scores)
 	console.log(topCities)
+
+	var bestCity = topCities[0];
+	loadSidebar(bestCity);
 };
+// submitRatings();
+
 
 function calculateScores(data) {
 	//var allSports = nfl.concat(mlb,nba,nhl)
@@ -24,41 +29,41 @@ function calculateScores(data) {
 	//add in football score
 	var multiplier = 6 - data['football']
 	nfl.map(function(curTeam){
-		if (curTeam['team'] in scores) {
-			scores[curTeam['team']] += curTeam['overall']*multiplier
+		if (curTeam['place'] in scores) {
+			scores[curTeam['place']] += curTeam['overall']*multiplier
 		}
 		else {
-			scores[curTeam['team']] = curTeam['overall']
+			scores[curTeam['place']] = curTeam['overall']
 		}
 	});
 
 	var multiplier = 6 - data['baseball']
 	mlb.map(function(curTeam){
-		if (curTeam['team'] in scores) {
-			scores[curTeam['team']] += curTeam['overall']*multiplier
+		if (curTeam['place'] in scores) {
+			scores[curTeam['place']] += curTeam['overall']*multiplier
 		}
 		else {
-			scores[curTeam['team']] = curTeam['overall']
+			scores[curTeam['place']] = curTeam['overall']
 		}
 	});
 
 	var multiplier = 6 - data['basketball']
 	nba.map(function(curTeam){
-		if (curTeam['team'] in scores) {
-			scores[curTeam['team']] += curTeam['overall']*multiplier
+		if (curTeam['place'] in scores) {
+			scores[curTeam['place']] += curTeam['overall']*multiplier
 		}
 		else {
-			scores[curTeam['team']] = curTeam['overall']
+			scores[curTeam['place']] = curTeam['overall']
 		}
 	});
 
 	var multiplier = 6 - data['hockey']
 	nhl.map(function(curTeam){
-		if (curTeam['team'] in scores) {
-			scores[curTeam['team']] += curTeam['overall']*multiplier
+		if (curTeam['place'] in scores) {
+			scores[curTeam['place']] += curTeam['overall']*multiplier
 		}
 		else {
-			scores[curTeam['team']] = curTeam['overall']
+			scores[curTeam['place']] = curTeam['overall']
 		}
 	});
 

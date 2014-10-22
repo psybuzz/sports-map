@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="choiceView">
-			<h1>Please rate the follow sports from 1 to 5.</h1>
+			<h1>Please rate the following sports from 1 to 5.</h1>
 			<div class="lead">1 being your most favorite and 5 being your least favorite.</div>
 			<table class = "table table-striped" id="data-entry">
 				<tr>
@@ -108,19 +108,20 @@
 
 		<div id="mapView">
 			<div id="infobox">
-				<h2>Chicago Bulls</h2>
+				<h2 id="team-name">Chicago Bulls</h2>
 				<dl class="dl-horizontal">
-					<dt>Attendance</dt><dd>23,101</dd>
-					<dt>Championships</dt><dd>3</dd>
-					<dt>Founded</dt><dd>1975</dd>
-					<dt>Retired Numbers</dt><dd>11, 12, 25</dd>
-					<dt>Arena</dt><dd>Eastern West Center</dd>
-					<dt>Owner(s)</dt><dd>Tom Player</dd>
+					<dt>Attendance</dt><dd id="info-attendance">23,101</dd>
+					<dt>Championships</dt><dd id="info-championships">3</dd>
+					<dt>Founded</dt><dd id="info-founded">1975</dd>
+					<dt>Retired Numbers</dt><dd id="info-retired">11, 12, 25</dd>
+					<dt>Arena</dt><dd id="info-arena">Eastern West Center</dd>
+					<dt>Owner(s)</dt><dd id="info-owner">Tom Player</dd>
 				</dl>
 			</div>
 
 			<div id="sideContainer">
-				<ul>
+				<h2 id="city-name">Chicago</h2>
+				<ul id="scoreList">
 					<li class="scoreBox"><span class="scoreValue"></span></li>
 					<li class="scoreBox"><span class="scoreValue"></span></li>
 					<li class="scoreBox"><span class="scoreValue"></span></li>
