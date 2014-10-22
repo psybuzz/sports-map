@@ -1,3 +1,38 @@
 #data-entry{
 	width: 50%;
 }
+
+#sideContainer{
+	position: absolute;
+	top: 30%;
+	right: 30px;
+	width: 300px;
+	padding: 10px;
+	background-color: lightgray;
+}
+
+#sideContainer > ul{
+	list-style-type: none;
+}
+
+#sideContainer .scoreBox{
+	background-color: gray;
+	height: 40px;
+	margin: 10px 10px 20px 30px;
+	right: 0px;
+	position: relative;
+}
+
+#sideContainer .scoreValue{
+	background-color: lightseagreen;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+}
+
+#infobox{
+	background-color: lightgray;
+	display: inline-block;
+	padding: 20px 50px;
+	border-radius: 8px;
+}
