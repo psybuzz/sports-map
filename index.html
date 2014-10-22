@@ -10,138 +10,125 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	</head>
 	<body>
-		<h1>Please rate the follow sports from 1 to 5. 1 being your most favorite and 5 being your least favorite.</h1>
-		<table class = "table table-striped" id="data-entry">
-			<tr>
-				<th>Sport</th>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-				<th>5</th>
-			</tr>
-			<tr>
-				<th>
-					<p>Basketball</p>
-				</th>
-				<th>
-					<input type="radio" id="1-basketball" name="group1">
-				</th>
-				<th>
-					<input type="radio" id="2-basketball" name="group1">
-				</th>
-				<th>
-					<input type="radio" id="3-basketball" name="group1">
-				</th>
-				<th>
-					<input type="radio" id="4-basketball" name="group1">
-				</th>
-				<th>
-					<input type="radio" id="5-basketball" name="group1">
-				</th>
-			</tr>
-			<tr>
-				<th>
-					<p>Hockey</p>
-				</th>
-				<th>
-					<input type="radio" id="1-hockey" name="group2">
-				</th>
-				<th>
-					<input type="radio" id="2-hockey" name="group2">
-				</th>
-				<th>
-					<input type="radio" id="3-hockey" name="group2">
-				</th>
-				<th>
-					<input type="radio" id="4-hockey" name="group2">
-				</th>
-				<th>
-					<input type="radio" id="5-hockey" name="group2">
-				</th>
-			</tr>
-			<tr>
-				<th>
-					<p>Baseball</p>
-				</th>
-				<th>
-					<input type="radio" id="1-baseball" name="group3">
-				</th>
-				<th>
-					<input type="radio" id="2-baseball" name="group3">
-				</th>
-				<th>
-					<input type="radio" id="3-baseball" name="group3">
-				</th>
-				<th>
-					<input type="radio" id="4-baseball" name="group3">
-				</th>
-				<th>
-					<input type="radio" id="5-baseball" name="group3">
-				</th>
-			</tr>
-			<tr>
-				<th>
-					<p>Football</p>
-				</th>
-				<th>
-					<input type="radio" id="1-football" name="group4">
-				</th>
-				<th>
-					<input type="radio" id="2-football" name="group4">
-				</th>
-				<th>
-					<input type="radio" id="3-football" name="group4">
-				</th>
-				<th>
-					<input type="radio" id="4-football" name="group4">
-				</th>
-				<th>
-					<input type="radio" id="5-football" name="group4">
-				</th>
-			</tr>
-			<tr>
-				<th>
-					<p>Soccer</p>
-				</th>
-				<th>
-					<input type="radio" id="1-soccer" name="group5">
-				</th>
-				<th>
-					<input type="radio" id="2-soccer" name="group5">
-				</th>
-				<th>
-					<input type="radio" id="3-soccer" name="group5">
-				</th>
-				<th>
-					<input type="radio" id="4-soccer" name="group5">
-				</th>
-				<th>
-					<input type="radio" id="5-soccer" name="group5">
-				</th>
-			</tr>
-		</table>
-		<button class="btn btn-lg btn-info" id="submitData" onClick='submitRatings()'>Submit!</button>
-		<div id="infobox">
-			<h2>Chicago Bulls</h2>
-			<dl class="dl-horizontal">
-				<dt>Attendance</dt><dd>...</dd>
-				<dt>Championships</dt><dd>...</dd>
-				<dt>Founded</dt><dd>...</dd>
-				<dt>Retired Numbers</dt><dd>...</dd>
-				<dt>Arena</dt><dd>...</dd>
-				<dt>Owner(s)</dt><dd>...</dd>
-			</dl>
+		<div id="choiceView">
+			<h1>Please rate the follow sports from 1 to 5.</h1>
+			<div class="lead">1 being your most favorite and 5 being your least favorite.</div>
+			<table class = "table table-striped" id="data-entry">
+				<tr>
+					<td>Sport</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Basketball</p>
+					</th>
+					<th>
+						<input type="radio" id="1-basketball" name="group1">
+					</th>
+					<th>
+						<input type="radio" id="2-basketball" name="group1">
+					</th>
+					<th>
+						<input type="radio" id="3-basketball" name="group1">
+					</th>
+					<th>
+						<input type="radio" id="4-basketball" name="group1">
+					</th>
+					<th>
+						<input type="radio" id="5-basketball" name="group1">
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<p>Hockey</p>
+					</th>
+					<th>
+						<input type="radio" id="1-hockey" name="group2">
+					</th>
+					<th>
+						<input type="radio" id="2-hockey" name="group2">
+					</th>
+					<th>
+						<input type="radio" id="3-hockey" name="group2">
+					</th>
+					<th>
+						<input type="radio" id="4-hockey" name="group2">
+					</th>
+					<th>
+						<input type="radio" id="5-hockey" name="group2">
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<p>Baseball</p>
+					</th>
+					<th>
+						<input type="radio" id="1-baseball" name="group3">
+					</th>
+					<th>
+						<input type="radio" id="2-baseball" name="group3">
+					</th>
+					<th>
+						<input type="radio" id="3-baseball" name="group3">
+					</th>
+					<th>
+						<input type="radio" id="4-baseball" name="group3">
+					</th>
+					<th>
+						<input type="radio" id="5-baseball" name="group3">
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<p>Football</p>
+					</th>
+					<th>
+						<input type="radio" id="1-football" name="group4">
+					</th>
+					<th>
+						<input type="radio" id="2-football" name="group4">
+					</th>
+					<th>
+						<input type="radio" id="3-football" name="group4">
+					</th>
+					<th>
+						<input type="radio" id="4-football" name="group4">
+					</th>
+					<th>
+						<input type="radio" id="5-football" name="group4">
+					</th>
+				</tr>
+			</table>
+			<button class="btn btn-lg btn-info" id="submitData" onClick='submitRatings()'>Submit!</button>
 		</div>
 
-		<div id="sideContainer">
-			<ul>
-				<li class="scoreBox"><span class="scoreValue"></span></li>
-				<li class="scoreBox"><span class="scoreValue"></span></li>
-				<li class="scoreBox"><span class="scoreValue"></span></li>
-				<li class="scoreBox"><span class="scoreValue"></span></li>
-			</ul>
+		<div id="mapView">
+			<div id="infobox">
+				<h2>Chicago Bulls</h2>
+				<dl class="dl-horizontal">
+					<dt>Attendance</dt><dd>23,101</dd>
+					<dt>Championships</dt><dd>3</dd>
+					<dt>Founded</dt><dd>1975</dd>
+					<dt>Retired Numbers</dt><dd>11, 12, 25</dd>
+					<dt>Arena</dt><dd>Eastern West Center</dd>
+					<dt>Owner(s)</dt><dd>Tom Player</dd>
+				</dl>
+			</div>
+
+			<div id="sideContainer">
+				<ul>
+					<li class="scoreBox"><span class="scoreValue"></span></li>
+					<li class="scoreBox"><span class="scoreValue"></span></li>
+					<li class="scoreBox"><span class="scoreValue"></span></li>
+					<li class="scoreBox"><span class="scoreValue"></span></li>
+				</ul>
+			</div>
 		</div>
+
 		<script type="text/javascript" src="d3.min.js"></script>
 		<script type="text/javascript" src="attendance_data.js"></script>
 		<script type="text/javascript" src="preferenceChooser.js"></script>

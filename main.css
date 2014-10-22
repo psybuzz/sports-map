@@ -1,5 +1,54 @@
+#choiceView{
+	padding: 70px 120px;
+	transform: translateX(0px);
+	transition: 0.4s ease transform, 0.4s ease opacity;
+}
+
+#choiceView.gone{
+	transform: translateX(-200px);
+	opacity: 0;
+}
+
+
 #data-entry{
+	margin-top: 40px;
 	width: 50%;
+}
+
+#data-entry th{
+	width: 120px;
+}
+
+#data-entry th:nth-child(2) {
+	background: rgb(100, 150, 130);
+	width: 70px;
+	text-align: center;
+}
+#data-entry th:nth-child(3) {
+	background: rgb(190, 186, 153);
+	width: 70px;
+	text-align: center;
+}
+#data-entry th:nth-child(4) {
+	background: rgb(250, 190, 157);
+	width: 70px;
+	text-align: center;
+}
+#data-entry th:nth-child(5) {
+	background: rgb(255, 138, 135);
+	width: 70px;
+	text-align: center;
+}
+#data-entry th:nth-child(6) {
+	background: rgb(255, 50, 78);
+	width: 70px;
+	text-align: center;
+}
+
+
+
+#mapView{
+	display: none;
 }
 
 #sideContainer{
@@ -25,7 +74,7 @@
 
 #sideContainer .scoreValue{
 	background-color: lightseagreen;
-	width: 50%;
+	width: 1%;
 	height: 100%;
 	display: inline-block;
 }
@@ -33,6 +82,20 @@
 #infobox{
 	background-color: lightgray;
 	display: inline-block;
-	padding: 20px 50px;
+	position: absolute;
+	right: 380px;
+	top: 30%;
+	padding: 0px 30px;
 	border-radius: 8px;
+	opacity: 0.92;
+}
+#infobox:after{
+	content: '';
+	background-color: lightgray;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	margin-left: 325px;
+	margin-top: -120px;
+	transform: rotateZ(45deg);
 }

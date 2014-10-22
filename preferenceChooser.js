@@ -1,4 +1,12 @@
 function submitRatings() {
+	// Slide the choice view out of sight.
+	$('#choiceView').show(0)
+			.addClass('gone')
+			.delay(600)
+			.hide(600, function() {
+				$('#mapView').fadeIn('fast');
+			});
+
 	var data = {}
 	$('input:checked').each(function() {
 		data[($(this).attr('id').slice(2))] = $(this).attr('id')[0];
