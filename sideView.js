@@ -28,7 +28,7 @@ function loadSidebar (place) {
 		if (team.place == 'New York'){
 			scoreHTML += '<img class="team-icon" src="'+nyIcons[team.name]+'">';
 		} else {
-			scoreHTML += '<img class="team-icon" src="nyicons/Brooklyn_Nets.png">';
+			scoreHTML += '<img class="team-icon" src="'+sportIcons[getSportFromTeam(team.name)]+'">';
 		}
 		scoreHTML += '<div class="scoreBox">' +
 							'<span class="scoreValue" style="width:1%">' +
@@ -65,7 +65,8 @@ function loadInfobox (team) {
 	var sportData = allData[sport];
 	var bestTeamIndex = sportData.map(function (t){ return t.team; })
 			.indexOf(team.name);
-	$('#info-description').text((bestTeamIndex+1) + ' in ' + sport.toUpperCase());
+	$('#info-description').text((bestTeamIndex+1 || 1) + ' in ' + sport.toUpperCase());
+	$('#league-icon').attr('src', getSportFromTeam(team.name)+'.png');
 }
 
 function getSportFromTeam (team) {
@@ -97,9 +98,16 @@ $('#scoreList').mousemove(function (e) {
 		var bestTeams = teams.filter(function (team){
 			return team.place == state.currentCity;
 		});
+		$('#infobox')[0].style.top = (e.pageY-120) + 'px';
+		$('.team-icon').addClass('lighter');
+		$(box).find('.team-icon').removeClass('lighter');
 
 		loadInfobox(bestTeams[boxIndex]);
 	}
 }).mouseout(function () {
 	$('#infobox').hide();
+});
+
+$('#infobox').mouseout(function (e) {
+	$('.team-icon').removeClass('lighter');
 });

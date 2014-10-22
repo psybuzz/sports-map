@@ -82,6 +82,10 @@
 	margin-top: -25px;
 }
 
+.lighter{
+	opacity: 0.5;
+}
+
 #sideContainer .scoreValue{
 	background-color: lightseagreen;
 	width: 1%;
@@ -95,7 +99,7 @@
 	position: fixed;
 	right: 380px;
 	top: 3%;
-	padding: 0px 30px;
+	padding: 0px 150px 0px 30px;
 	border-radius: 8px;
 	opacity: 0.92;
 }
@@ -105,9 +109,17 @@
 	width: 30px;
 	height: 30px;
 	position: absolute;
+	z-index: -1;
 	right: -10px;
 	margin-top: -120px;
 	transform: rotateZ(45deg);
+}
+
+#league-icon{
+	width: 130px;
+	position: absolute;
+	top: 60px;
+	right: 20px;
 }
 
 #city-name{

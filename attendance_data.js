@@ -275,3 +275,17 @@ var nyIcons = {
 	"NY Mets": "nyicons/ny-mets.png"
 }
 
+var sportIcons = {
+	nfl: "Football.png",
+	mlb: "Baseball.png",
+	nba: "Basketball.png",
+	nhl: "Hockey.png"
+}
+
+var leagueIcons = {
+	nfl: "nfl.png",
+	mlb: "mlb.png",
+	nba: "nba.png",
+	nhl: "nhl.png"
+}
+
