@@ -1,0 +1,3 @@
+var state = {
+	currentCity: null
+}

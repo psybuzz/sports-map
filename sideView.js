@@ -4,6 +4,8 @@
  */
 
 function loadSidebar (place) {
+	state.currentCity = place;
+
 	var bestTeams = teams.filter(function (team){
 		return team.place == place;
 	});
@@ -20,19 +22,29 @@ function loadSidebar (place) {
 					'<span class="scoreValue" style="width:'+bestWidth+'%">' +
 					'</span>' +
 				'</li>';
+
+		console.log(team, bestWidth)
 	}
 
 	$('#city-name').text(place);
 	$('#scoreList').html(scoreHTML);
+	$('#infobox').hide();
+}
 
-	$('#team-name').text(bestTeams[0].name);
-	$('#info-attendance').text(bestTeams[0].attendance);
-	$('#info-championships').text(bestTeams[0].championships);
-	$('#info-founded').text(bestTeams[0].founded);
-	$('#info-retired').text(bestTeams[0].retired);
-	$('#info-arena').text(bestTeams[0].arena);
-	$('#info-owner').text(bestTeams[0].owner);
+function loadInfobox (team) {
+	$('#team-name').text(team.name);
+	$('#info-attendance').text(team.attendance);
+	$('#info-championships').text(team.championships);
+	$('#info-founded').text(team.founded);
+	$('#info-retired').text(team.retired);
+	$('#info-arena').text(team.arena);
+	$('#info-owner').text(team.owner);
 
+	var sport = getSportFromTeam(team.name);
+	var sportData = allData[sport];
+	var bestTeamIndex = sportData.map(function (t){ return t.team; })
+			.indexOf(team.name);
+	$('#info-description').text((bestTeamIndex+1) + ' in ' + sport.toUpperCase());
 }
 
 function getSportFromTeam (team) {
@@ -49,3 +61,20 @@ function getSportFromTeam (team) {
 
 	return sport;
 }
+
+$('#scoreList').mousemove(function (e) {
+	$('#infobox').show();
+	var box = e.target;
+	if (box && (box.classList.contains('scoreBox') ||
+				box.classList.contains('scoreValue'))){
+		box = box.classList.contains('scoreValue') ? box.parentElement : box;
+		var boxIndex = $(box).index();
+		var bestTeams = teams.filter(function (team){
+			return team.place == state.currentCity;
+		});
+
+		loadInfobox(bestTeams[boxIndex]);
+	}
+}).mouseout(function () {
+	$('#infobox').hide();
+});
